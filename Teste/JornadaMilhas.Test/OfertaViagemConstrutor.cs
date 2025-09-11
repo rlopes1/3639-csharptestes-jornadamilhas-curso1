@@ -76,6 +76,23 @@ public class OfertaViagemConstrutor
 
     }
 
+    [Fact]
+
+    public void RetornaTresErrosDeValidaacaoQuandoRotaPeriodoEPrecoSaoInvalidos()
+    {
+        //arrange
+        int quantidadeEsperada = 3;
+        Rota rota = null;
+        Periodo periodo = new Periodo(new DateTime(2024, 6, 1), new DateTime(2024, 5, 10));
+        double preco = -100;
+
+        //act
+        OfertaViagem oferta = new OfertaViagem(rota, periodo, preco);
+
+        //assert
+
+        Assert.Equal(quantidadeEsperada, oferta.Erros.Count());
+    }
 
 
 
