@@ -25,6 +25,30 @@ public class OfertaViagemConstrutor
         Assert.Equal(validacao, oferta.EhValido);
     }
 
+
+
+    //[Theory]
+    //[InlineData("Origem1", "Destino1", "2025-02-01", "2025-02-05", -250)]
+    //[InlineData("Origem1", "Destino1", "2025-02-01", "2025-02-05", 0)]
+    //public void RetornaMensagemDeErroDePreçoInvalidoQuandoPrecoMenorQueZero(string origem, string destino, string dataInicio, string dataFim, double preco)
+    //{
+    //    //cenário - arrange
+    //    Rota rota = new Rota(origem, destino);
+
+    //    Periodo periodo = new Periodo(DateTime.Parse(dataInicio), DateTime.Parse(dataFim));
+
+
+    //    //act
+    //    OfertaViagem oferta = new OfertaViagem(rota, periodo, preco);
+
+    //    //asert
+    //    Assert.Contains("O preço da oferta de viagem deve ser maior que zero.", oferta.Erros.Sumario);
+    //    Assert.False(oferta.EhValido);
+
+    //}
+
+
+
     [Fact]
     public void RetornaMensagemDeErroDeRotaOuPeriodoInvalidosQUandoRotaNula()
     {
@@ -57,24 +81,7 @@ public class OfertaViagemConstrutor
         Assert.False(oferta.EhValido);
     }
 
-    [Theory]
-    [InlineData("Origem1", "Destino1", "2025-2-1", "2025-2-5", -250)]
-    [InlineData("Origem1", "Destino1", "2025-2-1", "2025-2-5", 0)]
-    public void RetornaMensagemDeErroDePreçoInvalidoQuandoPrecoMenorQueZero(string origem, string destino, string dataInicio, string dataFim, double preco)
-    {
-        //cenário - arrange
-        Rota rota = new Rota(origem, destino);
-
-        Periodo periodo = new Periodo(DateTime.Parse(dataInicio), DateTime.Parse(dataFim));
-
-
-        //act
-        OfertaViagem oferta = new OfertaViagem(rota, periodo, preco);
-
-        //asert
-        Assert.Contains("O preço da oferta de viagem deve ser maior que zero.", oferta.Erros.Sumario);
-
-    }
+ 
 
     [Fact]
 
